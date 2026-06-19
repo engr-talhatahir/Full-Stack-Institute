@@ -1,0 +1,14 @@
+# Disable directory browsing
+Options -Indexes
+
+# Block access to PHP files
+<FilesMatch "\.(php|php3|php4|php5|phtml|inc)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Allow only image and PDF files
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
